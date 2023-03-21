@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set default font family and size */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Style the container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style the customer view */
+.customer-view {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.customer-view h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ticket, .now-serving, .last-number {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.now-serving p, .last-number p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.now-serving-number, .last-number {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.counters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.counter {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.counter .status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.counter .status .status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.counter .status .status-dot-offline {
+    background-color: #dc3545;
+}
+
+.counter .status .status-dot-online {
+    background-color: #28a745;
+}
+
+.counter .status .status-dot-serving {
+    background-color: #007bff;
+}
+
+.counter .counter-number {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.counter .current-number p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.counter .current-number span {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Style the counter management */
+.counter-management {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.counter-management h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.counter-management .counter {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.counter-management .counter .status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter-management .counter .status .status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.counter-management .counter .status .status-dot-offline {
+    background-color: #dc3545;
+}
+
+.counter-management .counter .status .status-dot-online {
+    background-color: #28a745;
+}
+
+/* Style the counter management buttons */
+.counter-management .counter button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.counter-management .counter .go-online-btn {
+    background-color: #28a745;
+}
+
+.counter-management .counter .complete-current-btn {
+    background-color: #ffc107;
+}
+
+.counter-management .counter .call-next-btn {
+    background-color: #007bff;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .customer-view {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .counters {
+        flex-direction: column;
+        align-items: center;
+    }
+    .counter {
+        width: 100%;
+    }
+    .counter-management {
+        width: 100%;
+    }
+    .counter.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+}

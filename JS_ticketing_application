@@ -1,0 +1,60 @@
+document.getElementById("take-ticket-btn").addEventListener("click", takeTicket);
+const counters = [false, false, false, false];
+const queue = [];
+
+function takeTicket() {
+    const ticketNumber = queue.length + 1;
+    queue.push(ticketNumber);
+    document.getElementById("ticket-number").textContent = ticketNumber;
+}
+
+function toggleCounterOnline(counterId) {
+    counters[counterId - 1] = !counters[counterId - 1];
+    document.getElementById(`counter-status-${counterId}`).classList.toggle("status-dot-online");
+    document.getElementById(`counter-status-${counterId}`).classList.toggle("status-dot-offline");
+    document.getElementById(`management-status-${counterId}`).classList.toggle("status-dot-online");
+    document.getElementById(`management-status-${counterId}`).classList.toggle("status-dot-offline");
+    document.getElementById(`counter-number-${counterId}`).textContent = counters[counterId - 1] ? `Counter ${counterId}` : "Offline";
+    document.getElementById(`go-online-btn-${counterId}`).textContent = counters[counterId - 1] ? "Go Offline" : "Go Online";
+}
+
+function completeCurrent(counterId) {
+    if (!counters[counterId - 1] || queue.length === 0) return;
+    const completedNumber = queue.shift();
+    document.getElementById("last-number").textContent = completedNumber;
+    updateCurrentNumbers();
+}
+
+function callNext(counterId) {
+    if (!counters[counterId - 1] || queue.length === 0) return;
+    if (document.querySelector(".counter.active") !== null && document.querySelector(".counter.active").id !== `counter-${counterId}`) {
+        return;
+    }
+    const currentCounter = document.getElementById(`counter-${counterId}`);
+    currentCounter.classList.add("active");
+    setTimeout(() => {
+        currentCounter.classList.remove("active");
+        updateCurrentNumbers();
+    }, 5000);
+}
+
+
+function updateCurrentNumbers() {
+    if (queue.length === 0) {
+        document.getElementById("now-serving-number").textContent = "-";
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById(`current-number-${i}`).textContent = "-";
+        }
+    } else {
+        document.getElementById("now-serving-number").textContent = queue[0];
+        for (let i = 1; i <= 4; i++) {
+            document.getElementById(`current-number-${i}`).textContent = counters[i - 1] ? queue[0] : "-";
+        }
+    }
+}
+
+for (let i = 1; i <= 4; i++) {
+    document.getElementById(`go-online-btn-${i}`).addEventListener("click", () => toggleCounterOnline(i));
+    document.getElementById(`complete-current-btn-${i}`).addEventListener("click", () => completeCurrent(i));
+    document.getElementById(`call-next-btn-${i}`).addEventListener("click", () => callNext(i));
+}

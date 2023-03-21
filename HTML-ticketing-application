@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Queue Ticketing Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="customer-view">
+    <h2>Customer View</h2>
+    <div class="ticket">
+      <p>Your Ticket Number:</p>
+      <span id="ticket-number"></span>
+      <button id="take-ticket-btn">Take a Number</button>
+    </div>
+    <div class="now-serving">
+      <p>Now Serving:</p>
+      <span id="now-serving-number">-</span>
+    </div>
+    <div class="last-number">
+      <p>Last Number:</p>
+      <span id="last-number">-</span>
+    </div>
+    <div class="counters">
+      <div class="counter">
+        <div class="status">
+          <span id="counter-status-1" class="status-dot status-dot-offline"></span>
+          <span id="counter-number-1" class="counter-number">Offline</span>
+        </div>
+        <div class="current-number">
+          <p>Current Number:</p>
+          <span id="current-number-1"></span>
+        </div>
+      </div>
+      <div class="counter">
+        <div class="status">
+          <span id="counter-status-2" class="status-dot status-dot-offline"></span>
+          <span id="counter-number-2" class="counter-number">Offline</span>
+        </div>
+        <div class="current-number">
+          <p>Current Number:</p>
+          <span id="current-number-2"></span>
+        </div>
+      </div>
+      <div class="counter">
+        <div class="status">
+          <span id="counter-status-3" class="status-dot status-dot-offline"></span>
+          <span id="counter-number-3" class="counter-number">Offline</span>
+        </div>
+        <div class="current-number">
+          <p>Current Number:</p>
+          <span id="current-number-3"></span>
+        </div>
+      </div>
+      <div class="counter">
+        <div class="status">
+          <span id="counter-status-4" class="status-dot status-dot-offline"></span>
+          <span id="counter-number-4" class="counter-number">Offline</span>
+        </div>
+        <div class="current-number">
+          <p>Current Number:</p>
+          <span id="current-number-4"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="counter-management">
+    <h2>Counter Management</h2>
+    <div class="counter">
+      <div class="status">
+        <span id="management-status-1" class="status-dot status-dot-offline"></span>
+        <span class="counter-number">Counter 1</span>
+      </div>
+      <button id="go-online-btn-1" class="go-online-btn">Go Online</button>
+      <button id="complete-current-btn-1" class="complete-current-btn">Complete Current</button>
+      <button id="call-next-btn-1" class="call-next-btn">Call Next</button>
+    </div>
+    <div class="counter">
+      <div class="status">
+        <span id="management-status-2" class="status-dot status-dot-offline"></span>
+        <span class="counter-number">Counter 2</span>
+      </div>
+      <button id="go-online-btn-2" class="go-online-btn">Go Online</button>
+      <button id="complete-current-btn-2" class="complete-current-btn">Complete Current</button>
+      <button id="call-next-btn-2" class="call-next-btn">Call Next</button>
+    </div>
+    <div class="counter">
+      <div class="status">
+        <span id="management-status-3" class="status-dot status-dot-offline"></span>
+        <span class="counter-number">Counter 3</span>
+      </div>
+      <button id="go-online-btn-3" class="go-online-btn">Go Online</button>
+      <button id="complete-current-btn-3" class="complete-current-btn">Complete Current</button>
+      <button id="call-next-btn-3" class="call-next-btn">Call Next</button>
+    </div>
+    <div class="counter">
+      <div class="status">
+        <span id="management-status-4" class="status-dot status-dot-offline"></span>
+        <span class="counter-number">Counter 4</span>
+      </div>
+      <button id="go-online-btn-4" class="go-online-btn">Go Online</button>
+      <button id="complete-current-btn-4" class="complete-current-btn">Complete Current</button>
+      <button id="call-next-btn-4" class="call-next-btn">Call Next</button>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
